@@ -75,14 +75,6 @@ using (var report = new Report())
 
     var export = new PDFSimpleExport();
     export.Export(report, "report.pdf");
-    var fullPath = Path.GetFullPath("report.pdf");
-    new Process
-    {
-        StartInfo = new ProcessStartInfo(fullPath)
-        {
-        UseShellExecute = true
-        }
-    }.Start();
 }
 ```
 
