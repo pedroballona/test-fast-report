@@ -4,7 +4,7 @@ Para gerar um relatório com o [FastReport](https://github.com/FastReports/FastR
 
 ## Criação do Design
 
-O FastReport possui um software de design que pode ser baixado [aqui](https://github.com/FastReports/FastReport/releases). Mas antes de usar o designer é necessário criar um arquivo de design com o modelo de dados. Para isso é necessário criar um programa que crie o relatório baseado em um dataset:
+O FastReport possui um software de design que pode ser baixado [aqui](https://github.com/FastReports/FastReport/releases). Mas antes de usar o designer é necessário criar um arquivo de template com o modelo de dados. Para isso é necessário criar um programa que crie o template baseado em um dataset:
 
 ```c#
 private static void GenerateBaseReport()
@@ -19,7 +19,7 @@ private static void GenerateBaseReport()
 }
 ```
 
-Após isso é só abrir o design com o software de design e o modelo do dataset estará imputado no arquivo.
+Após isso é só abrir o template com o software de design e o modelo do dataset estará imputado no arquivo.
 
 Também é possível adicionar manualmente o modelo de dados no xml de um arquivo **.frx**. Para isso comece o arquivo dessa forma:
 
@@ -30,7 +30,7 @@ Também é possível adicionar manualmente o modelo de dados no xml de um arquiv
 </Report>
 ```
 
-E adicione uma tag de dicionário de dados com as informações necessárias
+E adicione uma tag de dicionário de dados com as informações necessárias ([exemplo](https://github.com/FastReports/FastReport.Documentation/blob/master/ReportTemplateFileStructure.md).
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -61,7 +61,7 @@ E adicione uma tag de dicionário de dados com as informações necessárias
 
 ## Criação do Report
 
-Para a criação do report basta carregar o arquivo de report e passar o DataSet com as informações populadas e mandar gerar o relatório.
+Para a criação do report basta carregar o arquivo de template e passar o DataSet com as informações populadas e mandar gerar o relatório.
 
 ```c#
 using (var report = new Report())
